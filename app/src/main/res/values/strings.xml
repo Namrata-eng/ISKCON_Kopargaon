@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ISKCON Temple</string>
+    <string name="home">Home</string>
+    <string name="darshan">Live Darshan</string>
+    <string name="schedule">Schedule</string>
+    <string name="services">Services</string>
+    <string name="more">More</string>
+</resources>
