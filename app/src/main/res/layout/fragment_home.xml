@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:text="ISKCON Kopergaon"
                         android:textColor="@color/white"
-                        android:textSize="32sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
                         android:fontFamily="sans-serif-medium"
                         android:shadowColor="#80000000"
@@ -49,6 +49,14 @@
                         android:shadowDy="2"
                         android:shadowRadius="4"
                         android:gravity="center" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/gradient_card_orange"
+                        android:src="@drawable/logo"
+                        android:contentDescription="Deity Image 1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -126,7 +134,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card_schedule"
                         android:layout_width="0dp"
-                        android:layout_height="130dp"
+                        android:layout_height="100dp"
                         android:layout_marginEnd="6dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -141,12 +149,12 @@
                             android:background="@drawable/gradient_card_orange"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="16dp">
+                            android:padding="1dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
+                                android:layout_marginBottom="0dp"
                                 android:text="⏰"
                                 android:textSize="42sp" />
 
@@ -167,7 +175,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card_services"
                         android:layout_width="0dp"
-                        android:layout_height="130dp"
+                        android:layout_height="100dp"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -182,20 +190,20 @@
                             android:background="@drawable/gradient_card_blue"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="16dp">
+                            android:padding="1dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="8dp"
-                                android:text="🛎️"
+                                android:text="📜"
                                 android:textSize="42sp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="Services"
+                                android:text="Scripture"
                                 android:textColor="@color/white"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -216,7 +224,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card_gallery"
                         android:layout_width="0dp"
-                        android:layout_height="130dp"
+                        android:layout_height="100dp"
                         android:layout_marginEnd="6dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -231,7 +239,7 @@
                             android:background="@drawable/gradient_card_green"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="16dp">
+                            android:padding="1dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -257,7 +265,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/card_more"
                         android:layout_width="0dp"
-                        android:layout_height="130dp"
+                        android:layout_height="100dp"
                         android:layout_marginStart="6dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -272,7 +280,7 @@
                             android:background="@drawable/gradient_card_red"
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="16dp">
+                            android:padding="1dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -545,7 +553,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🕉️ Join morning aarti for spiritual upliftment"
+                        android:text="🕉 Join morning aarti for spiritual upliftment"
                         android:textSize="15sp"
                         android:textColor="@color/dark_text"
                         android:lineSpacingExtra="4dp" />

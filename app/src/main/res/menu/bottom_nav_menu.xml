@@ -7,18 +7,22 @@
 
     <item
         android:id="@+id/nav_darshan"
-        android:title="Darshan" />
+
+        android:title="Darshan " />
 
     <item
         android:id="@+id/nav_schedule"
-        android:title="Schedule" />
+
+        android:title="Schedule " />
 
     <item
         android:id="@+id/nav_services"
-        android:title="Services" />
+
+        android:title="Services " />
 
     <item
         android:id="@+id/nav_more"
-        android:title="More" />
+
+        android:title="More " />
 
 </menu>

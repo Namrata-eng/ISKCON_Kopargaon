@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:elevation="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:weightSum="5">
+
+    <!-- Home -->
+    <LinearLayout
+        android:id="@+id/nav_home_custom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/icon_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛕"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/text_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="11sp"
+            android:textColor="@color/bhagwa_saffron"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Darshan -->
+    <LinearLayout
+        android:id="@+id/nav_darshan_custom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/icon_darshan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🪈"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/text_darshan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Darshan"
+            android:textSize="11sp"
+            android:textColor="@color/gray_text" />
+
+    </LinearLayout>
+
+    <!-- Schedule -->
+    <LinearLayout
+        android:id="@+id/nav_schedule_custom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/icon_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕒"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/text_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Schedule"
+            android:textSize="11sp"
+            android:textColor="@color/gray_text" />
+
+    </LinearLayout>
+
+    <!-- Services -->
+    <LinearLayout
+        android:id="@+id/nav_services_custom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/icon_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🪔"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/text_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Services"
+            android:textSize="11sp"
+            android:textColor="@color/gray_text" />
+
+    </LinearLayout>
+
+    <!-- More -->
+    <LinearLayout
+        android:id="@+id/nav_more_custom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/icon_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🦚"
+            android:textSize="24sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/text_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:textSize="11sp"
+            android:textColor="@color/gray_text" />
+
+    </LinearLayout>
+
+</LinearLayout>

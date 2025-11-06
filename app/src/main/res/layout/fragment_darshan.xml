@@ -100,7 +100,7 @@
                         <TextView
                             android:layout_width="110dp"
                             android:layout_height="wrap_content"
-                            android:text="4:30 AM"
+                            android:text="4 AM"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textColor="@color/sacred_orange" />

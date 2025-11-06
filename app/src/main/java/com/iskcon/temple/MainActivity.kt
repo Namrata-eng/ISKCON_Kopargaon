@@ -1,54 +1,105 @@
 package com.iskcon.temple
 
 import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private var currentSelectedTab = R.id.nav_home_custom
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         // Set default fragment (Home)
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
         }
 
-        // Handle bottom navigation clicks
-        bottomNavigation.setOnItemSelectedListener { item ->
-            when(item.itemId) {
-                R.id.nav_home -> {
-                    // Clear back stack when going to home
-                    clearBackStack()
-                    loadFragment(HomeFragment())
-                    true
-                }
-                R.id.nav_darshan -> {
-                    clearBackStack()
-                    loadFragment(DarshanFragment())
-                    true
-                }
-                R.id.nav_schedule -> {
-                    clearBackStack()
-                    loadFragment(ScheduleFragment())
-                    true
-                }
-                R.id.nav_services -> {
-                    clearBackStack()
-                    loadFragment(ServicesFragment())
-                    true
-                }
-                R.id.nav_more -> {
-                    clearBackStack()
-                    loadFragment(MoreFragment())
-                    true
-                }
-                else -> false
-            }
+        // Setup custom bottom navigation
+        setupCustomBottomNavigation()
+    }
+
+    private fun setupCustomBottomNavigation() {
+        val navHome = findViewById<LinearLayout>(R.id.nav_home_custom)
+        val navDarshan = findViewById<LinearLayout>(R.id.nav_darshan_custom)
+        val navSchedule = findViewById<LinearLayout>(R.id.nav_schedule_custom)
+        val navServices = findViewById<LinearLayout>(R.id.nav_services_custom)
+        val navMore = findViewById<LinearLayout>(R.id.nav_more_custom)
+
+        // Home
+        navHome.setOnClickListener {
+            selectTab(R.id.nav_home_custom)
+            clearBackStack()
+            loadFragment(HomeFragment())
+        }
+
+        // Darshan
+        navDarshan.setOnClickListener {
+            selectTab(R.id.nav_darshan_custom)
+            clearBackStack()
+            loadFragment(DarshanFragment())
+        }
+
+        // Schedule
+        navSchedule.setOnClickListener {
+            selectTab(R.id.nav_schedule_custom)
+            clearBackStack()
+            loadFragment(ScheduleFragment())
+        }
+
+        // Services
+        navServices.setOnClickListener {
+            selectTab(R.id.nav_services_custom)
+            clearBackStack()
+            loadFragment(ServicesFragment())
+        }
+
+        // More
+        navMore.setOnClickListener {
+            selectTab(R.id.nav_more_custom)
+            clearBackStack()
+            loadFragment(MoreFragment())
+        }
+
+        // Set initial selection
+        selectTab(R.id.nav_home_custom)
+    }
+
+    private fun selectTab(tabId: Int) {
+        // Reset all tabs to default color
+        updateTabColor(R.id.nav_home_custom, false)
+        updateTabColor(R.id.nav_darshan_custom, false)
+        updateTabColor(R.id.nav_schedule_custom, false)
+        updateTabColor(R.id.nav_services_custom, false)
+        updateTabColor(R.id.nav_more_custom, false)
+
+        // Highlight selected tab
+        updateTabColor(tabId, true)
+        currentSelectedTab = tabId
+    }
+
+    private fun updateTabColor(tabId: Int, isSelected: Boolean) {
+        val tab = findViewById<LinearLayout>(tabId)
+        val textView = when (tabId) {
+            R.id.nav_home_custom -> findViewById<TextView>(R.id.text_home)
+            R.id.nav_darshan_custom -> findViewById<TextView>(R.id.text_darshan)
+            R.id.nav_schedule_custom -> findViewById<TextView>(R.id.text_schedule)
+            R.id.nav_services_custom -> findViewById<TextView>(R.id.text_services)
+            R.id.nav_more_custom -> findViewById<TextView>(R.id.text_more)
+            else -> null
+        }
+
+        if (isSelected) {
+            textView?.setTextColor(ContextCompat.getColor(this, R.color.bhagwa_saffron))
+            textView?.typeface = android.graphics.Typeface.DEFAULT_BOLD
+        } else {
+            textView?.setTextColor(ContextCompat.getColor(this, R.color.gray_text))
+            textView?.typeface = android.graphics.Typeface.DEFAULT
         }
     }
 
@@ -59,19 +110,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun clearBackStack() {
-        // Clear all fragments from back stack
         for (i in 0 until supportFragmentManager.backStackEntryCount) {
             supportFragmentManager.popBackStack()
         }
     }
 
-    // Handle back button press
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount > 0) {
-            // If there are fragments in back stack, pop them
             supportFragmentManager.popBackStack()
         } else {
-            // Otherwise, exit the app
             super.onBackPressed()
         }
     }

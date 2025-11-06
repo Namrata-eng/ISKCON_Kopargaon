@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 
@@ -17,57 +16,34 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        setupQuickAccessCards(view)
+        setupQuickNavigation(view)
 
         return view
     }
 
-    private fun setupQuickAccessCards(view: View) {
-        // Schedule Card
-        view.findViewById<CardView>(R.id.card_schedule).setOnClickListener {
-            navigateToSchedule()
+    private fun setupQuickNavigation(view: View) {
+        // Daily Schedule
+        view.findViewById<CardView>(R.id.card_schedule)?.setOnClickListener {
+            requireActivity().findViewById<CardView>(R.id.nav_schedule_custom)?.performClick()
         }
 
-        // Services Card
-        view.findViewById<CardView>(R.id.card_services).setOnClickListener {
-            navigateToServices()
+        // Services
+        view.findViewById<CardView>(R.id.card_services)?.setOnClickListener {
+            requireActivity().findViewById<CardView>(R.id.nav_services_custom)?.performClick()
         }
 
-        // Gallery Card
-        view.findViewById<CardView>(R.id.card_gallery).setOnClickListener {
-            navigateToGallery()
+        // Gallery
+        view.findViewById<CardView>(R.id.card_gallery)?.setOnClickListener {
+            val galleryFragment = GalleryFragment()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, galleryFragment)
+                .addToBackStack("home")
+                .commit()
         }
 
-        // More Card
-        view.findViewById<CardView>(R.id.card_more).setOnClickListener {
-            navigateToMore()
+        // More
+        view.findViewById<CardView>(R.id.card_more)?.setOnClickListener {
+            requireActivity().findViewById<CardView>(R.id.nav_more_custom)?.performClick()
         }
-    }
-
-    private fun navigateToSchedule() {
-        // Navigate to Schedule tab using bottom navigation
-        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.nav_schedule
-    }
-
-    private fun navigateToServices() {
-        // Navigate to Services tab using bottom navigation
-        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.nav_services
-    }
-
-    private fun navigateToGallery() {
-        // Navigate to Gallery fragment
-        val galleryFragment = GalleryFragment()
-        requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, galleryFragment)
-            .addToBackStack("home")
-            .commit()
-    }
-
-    private fun navigateToMore() {
-        // Navigate to More tab using bottom navigation
-        val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.nav_more
     }
 }
